@@ -7,65 +7,41 @@
  */
 public class Person
 {
-	double cmHeight;
-	double kgWeight;
-	boolean smoker = true;
-	int weeklyAlcoholUnits = 50; // 1 pint = 2 units, 1 short = 1 unit)
+	double cmHeight = 170;
+	double kgWeight = 70;
+	boolean smoker = false;
+	int weeklyAlcholUnits = 15;
 	final int RWAL = 21;   //RWAL - Recommended Weekly Alcohol Limit
-	int restPulse;
+	int restPulse = 160;
 
-	public boolean checkPulse()
+	
+	public void checkPulse()
 	{
 	   boolean healthyPulse;
 	   healthyPulse = ((restPulse > 30) && (restPulse < 180));
-	   return healthyPulse;
+	   System.out.print("Healthy pulse = ");
+	   System.out.println(healthyPulse);
 	}
 	
-	public boolean checkAbuser()
+	public void checkForAbuse()
 	{
 	      boolean abuser ;
-	      abuser = ((weeklyAlcoholUnits > RWAL) || (smoker) );
-	      return abuser;
+	      abuser = ((weeklyAlcholUnits > RWAL) || (smoker) );
+	      System.out.print("Checking for abuse -- ");
+	      System.out.println(abuser);
+	
+	}
+	public void checkForGender()
+	{
+		char gender = 'M';
+		System.out.println("Cheking gender...Hey hey there's no need to do that here, I trust you're a " + gender);
+	}
+	public void displayDetails()
+	{
+	   System.out.println("Hey Bruno! Your height is " + (cmHeight / 100.0) + "m");
+	   System.out.println("And your weight is " + kgWeight + "kg");
+	   System.out.println("Your Weekly Alcohol Units are " + weeklyAlcholUnits);
+	   System.out.println("Your pulse is " + restPulse);
 	}
 	
-	public void displayProfile()
-	{
-	   System.out.println("���Health Profile��");
-	   
-	   System.out.println("Healthy pulse check = " + checkPulse());
-	   System.out.print("Abusing Body = " + checkAbuser());
-	   
-	}
-	//Put curseAndSwear method here
-	
-	public void curseAndSwear()
-	{
-		int randomi;
-		randomi = (int)(Math.random()*5)+1;
-		switch (randomi)
-		{
-			case 1:
-				randomi = 1;
-				System.out.println("God dammit I got the number 1");
-				break;
-			case 2:
-				randomi = 2;
-				System.out.println("Crap! I got number 2");
-				break;
-			case 3:
-				randomi = 3;
-				System.out.println("Fuck me! Why number 3??");
-				break;
-			case 4:
-				randomi = 4;
-				System.out.println("Shit! I got the worst number, 4");
-				break;
-			case 5:
-				randomi = 4;
-				System.out.println("Fuck you number 5!!");
-				break;
-
-
-		} 
-	}
 }
